@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>{{ equipement.name }} : {{ equipement.stock }}</p>
+    <a href="{{ path('index') }}"><button class="btn btn-primary">Back home</button></a>
+{% endblock %}

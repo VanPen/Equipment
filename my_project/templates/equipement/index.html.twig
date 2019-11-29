@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EquipementController!{% endblock %}
+
+{% block body %}
+    <img src="https://equipement-direct.fr/img/equipement-direct-logo-1551178363.jpg"
+         alt=""
+        style="margin-left: 750px">
+    <h1>Produits : {{equipement|length}}</h1>
+
+    {% if equipement|length > 0 %}
+        <div class="card-deck">
+                {% for equipement in equipement %}
+                    <div class="card">
+                        <img class="card-img-top" src="https://img.aws.la-croix.com/2018/04/10/1200930594/Comme-licorne-nexiste-paspermet-toutes-fantaisies_0_730_730.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{equipement.name}}</h5>
+                            <p class="card-text">Stock : {{equipement.stock}}</p>
+                            <a href="{{path('info', {'id' : equipement.id})}}"><button type="button" class="btn btn-primary"> Show</button></a>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+    {% else %}
+        <a href="{{path('load')}}">Load equipement</a>
+    {% endif %}
+    <a href={{path('add_equipement')}}><button class="btn btn-primary">Add equipment</button></a>
+{% endblock %}
