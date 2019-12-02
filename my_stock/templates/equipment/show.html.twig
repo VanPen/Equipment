@@ -1,6 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <p>{{ equipement.name }} : {{ equipement.stock }}</p>
+    <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{equipement.name}}</h5>
+                    <p class="card-text">Stock : {{equipement.stock}}</p>
+                    <p class="card-text">Description : {{ equipement.description }}</p>
+                    <p class="card-text">Stock : {{equipement.stock}}</p>
+                    <p class="card-text">Prix : {{ equipement.price }} €</p>
+                </div>
+            </div>
+    </div>
     <a href="{{ path('index') }}"><button class="btn btn-primary">Back home</button></a>
 {% endblock %}

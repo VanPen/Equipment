@@ -21,8 +21,8 @@
                 </div>
             {% endfor %}
         </div>
+        <a href={{path('add_equipement')}}><button class="btn btn-primary">Add equipment</button></a>
     {% else %}
         <a href="{{path('load')}}">Load equipement</a>
     {% endif %}
-    <a href={{path('add_equipement')}}><button class="btn btn-primary">Add equipment</button></a>
 {% endblock %}
